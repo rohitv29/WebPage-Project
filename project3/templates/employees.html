@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Employees
+{% endblock title %}
+
+
+{% block body %}
+<br />
+<center>
+    <h1>Our Employees</h1>
+</center><br />
+
+<div class="row py-2 mx-3">
+    {% for register in employee_list %}
+    <div class="col-sm-4 py-3">
+        <div class="card">
+            <center>
+                <h5 class="card-header">{{ register.name }}</h5>
+            </center>
+            <div class="card-body py-3">
+                <div class="column text-center">
+                    <div class="btn-group me-3">
+                        <a href="{{ register.linkedin }}" class="fa fa-linkedin"></a>
+                    </div>
+                    <div class="btn-group me-3">
+                        <a href="{{ register.twitter }}" class="fa fa-twitter"></a>
+                    </div>
+                    <div class="btn-group me-3">
+                        <a href="{{ register.instagram }}" class="fa fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    {% endfor %}
+</div>
+
+{% endblock body %}

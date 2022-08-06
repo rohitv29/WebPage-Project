@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock title %}
+
+{% block body %}
+<h1 class="text-center my-5 mt-5 mb-3">Fill Out Your Details</h1>
+<div class="container" style="width: 700px;">
+     <form method="post" action="/register" class="needs-validation">
+          {% csrf_token %}
+          <div class="form-group">
+               <b> <label for="name" class="form-label">Full Name</label></b>
+               <input type="text" class="form-control" id="Name" name="name" placeholder="Enter Your Name" required>
+          </div>
+
+          <div class="form-group mt-2">
+               <b><label for="email" class="form-label">Email</label></b>
+               <input type="email" class="form-control" id="email" name="email" placeholder="123@example.com" required>
+          </div>
+
+          <div class="form-group mt-2">
+               <b><label for="linkedin" class="form-label">Linkedin Url</label></b>
+               <input type="url" class="form-control" id="linkedin" name="linkedin"
+                    placeholder="Enter your Linkedin Profile Url">
+          </div>
+
+          <div class="form-group mt-2">
+               <b><label for="twitter" class="form-label">Twitter Url</label></b>
+               <input type="url" class="form-control" id="twitter" name="twitter"
+                    placeholder="Enter your Twitter Profile Url">
+          </div>
+
+          <div class="form-group mt-2">
+               <b><label for="instagram" class="form-label">Instagram Url</label></b>
+               <input type="url" class="form-control" id="instagram" name="instagram"
+                    placeholder="Enter your Instagram Profile Url">
+          </div>
+
+          <div class="mt-5">
+               <center><button class="w-50 btn btn-primary btn-lg" type="submit">Submit</button></center>
+          </div>
+     </form>
+</div>
+{% endblock body %}
